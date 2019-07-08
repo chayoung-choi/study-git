@@ -1,4 +1,4 @@
-package test.SimpleQuiz_190706;
+package study.AAC_SimpleQuiz;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package test.SimpleQuiz_190706;
+package study.AAC_SimpleQuiz;
 
 /* 190706
  * [문제1] 주어진 문자열 데이터를 가지고 실행결과와 같이 출력되도록 코드를 완성하세요.

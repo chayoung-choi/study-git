@@ -1,4 +1,4 @@
-package test.WordScrambleEx;
+package study.AAB_WordScrambleEx;
 
 public class WordScrambleEx1 {
 	/*	

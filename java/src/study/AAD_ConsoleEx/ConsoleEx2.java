@@ -1,4 +1,4 @@
-package test.ConsoleEx_190707;
+package study.AAD_ConsoleEx;
 
 import java.util.Scanner;
 
