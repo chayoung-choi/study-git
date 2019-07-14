@@ -56,14 +56,14 @@ public class SungJukEx1 {
 		System.out.println("====================================================");
 	}
 }
-
+/*	객체 중복으로 인한 주석 처리
 class Student {
-	/*
+	
 	 * 코드를 완성하세요.
 	 * 1. 이름(name), 반(classNo), 번호(studentNo), 국어(Korean), 수학(Math), 영어(English), 총점(Total)을 인스턴스변수로 선언한다.
 	 * 2. 이름, 반, 번호, 국어, 수학, 영어를 입력받아서 각 인스턴스변수에 저장하는 생성자를 선언한다.
 	 * 3. Object클래스의 toString()을 오버라이딩해서 실행결과와 같이, 이름, 반, 번호, 국어, 수학, 영어, 총점이 화면에 출력되도록 한다.
-	 */
+	 
 
 	String name = "";
 	int classNo = 0;
@@ -89,3 +89,4 @@ class Student {
 	}
 
 }
+*/

@@ -24,7 +24,7 @@ import java.util.List;
 	====================================================
 	[출처] [Java1000제] 성적처리 2 - Comparable구현하기 (남궁성의 코드초보스터디(자바 java, c언어, javascript, python) |작성자 남궁성
 */
-public class SungJukEx2 {
+class SungJukEx2 {
 	public static void main(String[] args) {
 		ArrayList<Student> list = new ArrayList<Student>();
 
@@ -55,7 +55,7 @@ public class SungJukEx2 {
 		System.out.println("====================================================");
 	}
 }
-
+/*// 객체 중복으로 인한 주석 처리
 class Student implements Comparable<Student> {
 	String name = "";
 	int classNo = 0;
@@ -82,9 +82,10 @@ class Student implements Comparable<Student> {
 	}
 
 	public int compareTo(Student obj) {
-		/*
+		
 		 * 코드를 완성하세요.
-		 */
+		 
 		return obj.total - this.total;
 	}
 } // end of class Student
+*/
