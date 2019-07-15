@@ -2,7 +2,6 @@ package study.AAE_SungJukEx;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 /*
 	190714.
@@ -94,7 +93,7 @@ class SungJukEx4 {
 
     } // public static void calculateSchoolRank(List<STUDENT> list) { 
 } 
-
+/* 클래스 중복으로 인한 주석 처리
 class Student implements Comparable<Student> {
 	String name = "";
 	int classNo = 0;
@@ -153,3 +152,4 @@ class ClassStudentNoComparator implements Comparator<Student> {
 		return result;
 	}
 }
+*/
