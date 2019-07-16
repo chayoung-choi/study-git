@@ -123,7 +123,7 @@ class SungJukEx5 {
     } // public static void calculateClassRank(List<Student> list) { 
 
 } 
-
+/*	// 클래스 중복으로 인한 주석 처리
 class Student implements Comparable<Student> {
 	String name = "";
 	int classNo = 0;
@@ -178,4 +178,4 @@ class ClassStudentNoComparator implements Comparator<Student> {
 
 		return result;
 	}
-}
+}*/
