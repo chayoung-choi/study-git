@@ -128,7 +128,6 @@ class Student implements Comparable<Student> {
 		return format(name, 5, LEFT) + format("" + classNo, 4, RIGHT) + format("" + studentNo, 4, RIGHT)
 				+ format("" + koreanScore, 6, RIGHT) + format("" + mathScore, 6, RIGHT)
 				+ format("" + englishScore, 6, RIGHT) + format("" + total, 8, RIGHT) + format("" + schoolRank, 8, RIGHT)
-
 				+ format("" + classRank, 8, RIGHT);
 	}
 
@@ -144,15 +143,17 @@ class Student implements Comparable<Student> {
 
 		// 주어진 문자열(str)의 길이보다 length의 값이 작으면 str를 length만큼만 남기고 잘라낸다.
 		// 예를 들어, str이 "012345"이고, length가 3이면 결과는 "012"가 된다.
-		if (diff < 0)
+		if (diff < 0) {
 			return str.substring(0, length);
-
+		}
+		
 		char[] source = str.toCharArray();
 		char[] result = new char[length];
 
 		// 배열 result를 공백으로 채운다.
-		for (int i = 0; i < result.length; i++)
+		for (int i = 0; i < result.length; i++) {
 			result[i] = ' ';
+		}
 		/*
 		 * 다음의 코드를 완성하세요.
 		 * 
@@ -165,6 +166,13 @@ class Student implements Comparable<Student> {
 		 * 		1.3 alignment의 값이 LEFT 또는 그 밖의 값 일 때
 		 * 			source의 내용을 result의 왼쪽끝 부터 복사되도록 한다..
 		 */
+		if ( alignment == CENTER ) {
+			System.arraycopy(source, 0, result, length/2, length);
+		} else if ( alignment == RIGHT ) {
+			System.arraycopy(source, 0, result, diff, length);
+		} else if ( alignment == LEFT ) {
+			System.arraycopy(source, 0, result, 0, length);
+		}
 
 		return new String(result);
 	}
