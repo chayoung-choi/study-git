@@ -167,11 +167,11 @@ class Student implements Comparable<Student> {
 		 * 			source의 내용을 result의 왼쪽끝 부터 복사되도록 한다..
 		 */
 		if ( alignment == CENTER ) {
-			System.arraycopy(source, 0, result, length/2, length);
+			System.arraycopy(source, 0, result, diff/2, source.length);
 		} else if ( alignment == RIGHT ) {
-			System.arraycopy(source, 0, result, diff, length);
+			System.arraycopy(source, 0, result, diff, source.length);
 		} else if ( alignment == LEFT ) {
-			System.arraycopy(source, 0, result, 0, length);
+			System.arraycopy(source, 0, result, 0, source.length);
 		}
 
 		return new String(result);
