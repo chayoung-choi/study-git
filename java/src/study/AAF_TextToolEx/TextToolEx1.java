@@ -1,4 +1,4 @@
-package study.AAF_TextToolEx1;
+package study.AAF_TextToolEx;
 
 import java.awt.Button;
 import java.awt.FlowLayout;
