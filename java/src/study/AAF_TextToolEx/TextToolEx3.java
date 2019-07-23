@@ -91,24 +91,24 @@ public class TextToolEx3 extends Frame implements WindowListener {
 				prevText = curText;
 
 				/*
-				 * 
 				 * 다음의 코드를 완성하세요.
-				 * 
-				 * 
-				 * 
 				 * 1. TextField Param1의 값을 가져온다.(getText()사용)
-				 * 
 				 * 2. 반복문을 이용해서 curText를 한글자씩 읽어서
-				 * 
-				 * Param1에서 가져온 문자열에 포함되어 있는지 확인한다.
-				 * 
-				 * 2.1 만일 포함되어 있으면 sb에 저장하고
-				 * 
-				 * 2.2 포함되어 있지 않으면 sb에 저장하지 않는다.
-				 * 
+				 * 	Param1에서 가져온 문자열에 포함되어 있는지 확인한다.
+				 * 	2.1 만일 포함되어 있으면 sb에 저장하고
+				 * 	2.2 포함되어 있지 않으면 sb에 저장하지 않는다.
 				 * 3. 작업이 끝난 후에 sb에 담긴 내용을 ta에 보여준다.(setText()사용)
-				 * 
 				 */
+				String param1 = tfParam1.getText();
+				
+				for ( int i=0; i<curText.length(); i++ ) {
+					char ch = curText.charAt(i);
+					
+					if (param1.indexOf(ch) == -1) {
+						sb.append(ch);
+					}
+				}
+				ta.setText(sb.toString());
 
 			}
 		});
