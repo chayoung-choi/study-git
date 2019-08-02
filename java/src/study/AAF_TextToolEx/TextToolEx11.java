@@ -14,8 +14,6 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.text.MessageFormat;
 import java.util.Scanner;
-// Pattern, Matcher클래스를 사용하기 위해 추가
-import java.util.regex.Pattern;
 /* 190801.
  * [문제11] TextArea의 데이터를 라인별로 읽어서 param1에 입력된 형식에서 데이터를 뽑아내서 보여주는 '패턴제거'버튼을 구현하세요.
 [출처] [Java1000제] Text데이터 편집도우미11 - 패턴제거 (남궁성의 코드초보스터디(자바 java, c언어, javascript, python) |작성자 남궁성
@@ -172,27 +170,18 @@ public class TextToolEx11 extends Frame implements WindowListener {
 				String pattern = tfParam1.getText();
 				String delimiter = tfParam2.getText();
 
-				Pattern p = Pattern.compile(pattern);
-
-				if (delimiter.length() == 0)
-					delimiter = ",";
-
-				/*
-				 * 다음의 코드를 완성하세요.
-				 * 1. Scanner클래스와 반복문을 이용해서 curText를 라인단위로 읽는다.
-				 * 2. 각 라인을 pattern에 맞게 매칭시킨다.(Pattern클래스의 matcher()사용)
-				 * 3. pattern에 매칭되는 데이터를 구분자와 함께 sb에 저장한다.
-				 * 4. sb의 내용을 TextArea에 보여준다.
-				 */
 				Scanner s = new Scanner(curText);
 
-				for (int i = 0; s.hasNextLine(); i++) {
+				for (int i=0; s.hasNextLine(); i++) {
 					String line = s.nextLine();
-					
-					if (p.matches(pattern, line)) {
+					String[] tokens = line.split(":");
+					String num = tokens[1].trim();
+					if (num.matches(pattern)) {
+						num = num.replaceAll("-", delimiter);
+						sb.append(num);
+					} else {
+						sb.append(line);
 					}
-					String[] tokens = line.split(delimiter);
-
 					sb.append(CR_LF);
 				}
 
