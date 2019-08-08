@@ -1,6 +1,6 @@
 package study.AAG_MyVector;
 
-/*	190805.
+/*	190806.
 [문제2] 다음의 MyVector클래스의 메서드들을 완성하세요.
 
 void ensureCapacity(int minCapacity) - 객체배열이 최소한 지정된 용량을 확보하도록 한다.
@@ -84,7 +84,7 @@ class MyVector2 {
 		 * 4. capacity의 값을 newCapacity로 변경한다.
 		 */
 		Object[] newDate = new Object[newCapacity];
-		System.arraycopy(data, 0, newDate, 0, newCapacity);
+		System.arraycopy(data, 0, newDate, 0, size);
 		data = newDate;
 		this.capacity = newCapacity;
 	}
@@ -94,14 +94,20 @@ class MyVector2 {
 		/*
 		 * 코드를 완성하세요.
 		 */
-
+		ensureCapacity(size+1);
+		data[size++] = obj;
+		return true;
 	}
 
 	public Object get(int index) {
 		/*
 		 * 코드를 완성하세요.
 		 */
+		if(index < 0 || index >= size) {
+			throw new IndexOutOfBoundsException("범위를 벗어났습니다."); 
+		}
 
+		return data[index];
 	}
 
 	public Object set(int index, Object obj) {
@@ -112,7 +118,12 @@ class MyVector2 {
 		 * 3. 새로운 객체(obj)를 객체배열 data의 index번째 값에 저장한다.
 		 * 4. 임시로 저장했던 기존 객체를 반환한다.
 		 */
-
+		if (index >= size) {
+			throw new ArrayIndexOutOfBoundsException(index);
+		}
+		Object old = data[index];
+		data[index] = obj;
+		return old;
 	}
 
 } // class MyVector
