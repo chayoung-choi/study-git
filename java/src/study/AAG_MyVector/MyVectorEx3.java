@@ -134,6 +134,24 @@ class MyVector3 {
                        (검색순서는 index부터 시작해서, index값을 감소시켜서 객체배열의 0번째까지 )
                4. 못찾으면 -1을 반환한다.
           */
+    	if (index >= size) {
+    		throw new IndexOutOfBoundsException();
+    	}
+    	
+    	if (obj == null) {
+    		for (int i=index; i>=0; i--) {
+    			if (data[i] == null) {
+    				return i;
+    			}
+    		}
+    	} else if (data.equals(obj)) {
+    		for (int i=index; i>=0; i--) {
+    			if (data[i] == obj) {
+    				return i;
+    			}
+    		}
+    	}
+    	return -1;
     } 
 
     public boolean contains(Object obj) {
@@ -141,7 +159,7 @@ class MyVector3 {
          /*
             코드를완성하세요. indexOf(Object obj, int index)를 사용
          */
-    	return indexOf(obj, 0) > -1;
+    	return indexOf(obj, 0) >= 0;
     } 
 
     public int indexOf(Object obj) { 
@@ -157,7 +175,7 @@ class MyVector3 {
          /*
             코드를완성하세요. lastIndexOf(Object obj, int index)를 사용
          */
-    	return lastIndexOf(obj, size);
+    	return lastIndexOf(obj, size-1);
     } 
 
 } // class MyVector3 
